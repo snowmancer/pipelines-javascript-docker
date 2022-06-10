@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: snowmancerpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: snowmancerpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: snowmancerpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: snowmancerpipelinesjavascriptdocker 
+          image: user19acr.azurecr.io/snowmancerpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
